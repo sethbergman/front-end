@@ -1,0 +1,11 @@
+.item {
+    margin: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .item {
+        margin: 0.7rem;
+    }
+}

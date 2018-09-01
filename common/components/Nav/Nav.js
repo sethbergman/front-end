@@ -1,26 +1,23 @@
 import React from 'react';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
+import NavItem from './NavItem/NavItem';
 import styles from './Nav.css';
 
 function Nav({ navItems }) {
   return (
     <nav className={styles.nav}>
       <ul className={styles.links}>
-        { navItems.map(item => 
-          <li key={item.url}>
-            <Link prefetch href={item.url}>
-              {item.name}
-            </Link></li>
-          ) 
-        }
+        {navItems.map(item => <NavItem {...item} />)}
       </ul>
     </nav>
   );
 }
 
 Nav.propTypes = {
-  navItems: PropTypes.array.isRequired
+  navItems: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
+  })).isRequired
 }
 
 export default Nav;
