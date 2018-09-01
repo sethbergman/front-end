@@ -1,17 +1,18 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import Nav from 'components/nav';
+import Nav from 'common/components/Nav/Nav';
+import navConfig from 'common/components/Nav/navConfig';
 import 'common/styles/globalStyles.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {
-  render() {
+  render() {   
     // eslint-disable-next-line react/prop-types
     const { children } = this.props;
 
     return (
       <>
-        <Nav />
+      <Nav navItems={navConfig} />
         {children}
         {/* FOOTER EVENTUALLY GOES HERE */}
       </>

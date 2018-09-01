@@ -1,0 +1,50 @@
+.nav {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    box-sizing: border-box;
+    height: 80px;
+    padding: 0 2rem;
+    position: fixed;
+    width: 100%;
+}
+
+.brand-gray {
+    background-color: rgb(117,129,143);
+}
+
+.navScrolling {
+    background-color: #000;
+    opacity: 0.7;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0 60%;
+    font-size: 20px;
+    list-style-type: none;
+}
+  
+.links a {
+    margin: 1rem;
+    color: white;
+    text-decoration: none;
+}
+  
+@media screen and (max-width: 1000px) {
+    .links {
+        margin-right: 40px;
+        font-size:16px;
+    }
+    .links a {
+        margin: 0.7rem;
+    }
+}
+  
+@media screen and (max-width: 779px) /* Tablet */ {
+    .links {
+        display: none;
+    }
+}
+  
