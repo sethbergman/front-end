@@ -7,17 +7,14 @@ function Nav({ navItems }) {
   return (
     <nav className={styles.nav}>
       <ul className={styles.links}>
-        {navItems.map(item => <NavItem {...item} />)}
+        {navItems.map(item => <li><NavItem {...item} /></li>)}
       </ul>
     </nav>
   );
 }
 
 Nav.propTypes = {
-  navItems: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
-  })).isRequired
+  navItems: PropTypes.array.isRequired
 }
 
 export default Nav;

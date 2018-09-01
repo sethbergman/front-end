@@ -1,19 +1,20 @@
 import React from 'react';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
+import NavDropdown from '../NavDropdown/NavDropdown';
 import styles from './NavItem.css';
 
-function NavItem({ name, url }) {
+function NavItem({ name, links }) {
   return (
-    <li className={styles.item} key={url}>
-        <Link prefetch href={url}>{name}</Link>
-    </li>
+    <>
+    <span className={styles.item}>{name}</span>
+    <NavDropdown links={links}/>
+    </>
   );
 }
 
 NavItem.propTypes = {
   name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
+  links: PropTypes.array.isRequired
 }
 
 export default NavItem;
